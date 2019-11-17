@@ -1,4 +1,5 @@
 **MAZE**
+Maze Game written in c++/opengl
 
 **Instructions**\
 up arrow --> move forward\
