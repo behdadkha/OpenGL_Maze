@@ -1,4 +1,4 @@
-**MAZE(Final_project)**
+**MAZE**
 
 **Instructions**\
 up arrow --> move forward\
