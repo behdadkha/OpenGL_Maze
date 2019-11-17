@@ -1,4 +1,4 @@
-**MAZE**
+**MAZE**\
 Maze Game written in c++/opengl
 
 **Instructions**\
