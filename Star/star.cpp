@@ -30,7 +30,6 @@ void Star::drawStar(){
 	glPointSize(5);
 	glBegin(GL_POLYGON);
 		glColor3f(1, 1, 0);
-
         glVertex3f(0,-0.3,0);
         glVertex3f(-1.2,-1,0);
         glVertex3f(-0.8,0,0);
@@ -56,7 +55,5 @@ Star::Star(int pos){
 
 	this -> evil = false;
 
-	Materials m;
-	this -> material = m.gold();
 }
 

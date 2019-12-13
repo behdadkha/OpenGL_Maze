@@ -36,12 +36,12 @@ run: $(PROGRAM_NAME)
 #ie. boilerplateClass.o and yourFile.o
 #make will automatically know that the objectfile needs to be compiled
 #form a cpp source file and find it itself :)
-$(PROGRAM_NAME): ./Material/materials.o ./Player/player.o ./Star/star.o ./World/maze.o ./Obstacle/obstacle.o ./World/world.o main.o
+$(PROGRAM_NAME): ./particle_system/particle.o ./Texture/PPM/PPM.o ./Player/player.o ./Star/star.o ./World/maze.o ./Obstacle/obstacle.o ./World/world.o main.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 clean:
 	$(RM) *.o $(PROGRAM_NAME)$(EXEEXT)
-	$(RM) ./Material/*.o
+	$(RM) ./Texture/PPM/*.o
 	$(RM) ./Obstacle/*.o
 	$(RM) ./Player/*.o
 	$(RM) ./Star/*.o

@@ -9,7 +9,8 @@ class World{
 public:
 	World();
 	void drawFloor();
-	float time;
+	void newWorld();
+	int time;
 
 	int numStars;
 
@@ -20,7 +21,7 @@ public:
 	std::vector<Star> stars;//stars
 	std::vector<Obstacle> darts;//obstacles
 	
-	Maze *maze;
+	//Maze *maze;
 
 	std::vector<std::vector<float>> wallPositions;
 	std::vector<std::vector<float>> wallScale;

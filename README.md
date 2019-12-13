@@ -1,5 +1,14 @@
-**MAZE**\
-Maze Game written in c++/opengl
+**MAZE(Final_project)**
+
+Running the makefile will execute the game.
+
+**Features**\
+Lighting\
+Texture\
+Particle systems\
+Animated character\
+Non-geometric primitives(game selection and life-star-time)\
+Advanced camera control(drag to move the camera)
 
 **Instructions**\
 up arrow --> move forward\
@@ -10,13 +19,10 @@ left arrow --> move left
 space --> take a quick peek from above\
 'w' --> move the camera up(can't get too far)\
 's' --> move the camera down\
-'a','d' --> look to the left and right(only in the dart section)\
-'q' --> quit
+'a','d' --> look to the left and right\
 
-**Notes**\
--There is a dart section after the maze.\
--Stars are randomly placed in the maze every time the game starts.(player can catch the stars)\
--Once a dart(ball :-)) hits the player, it stops where it is and the player loses one health.\
--Camera rotates to the left and to the right, only in the dart section.
+mouse drag --> look around(camera movement)
+
+'q' --> quit
 
 

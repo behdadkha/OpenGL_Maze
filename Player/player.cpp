@@ -34,6 +34,7 @@ Player::Player(){
 void Player::drawPlayer(){
 	glBegin(GL_QUADS);
 		//back side
+        glNormal3f(0,0,-1);
         glColor3f(1, 1, 0);
         glVertex3f(-0.5,0, -2);
         glVertex3f(-0.5,1, -2);
@@ -41,6 +42,7 @@ void Player::drawPlayer(){
         glVertex3f(0.5, 0, -2);
 
         //front side
+        glNormal3f(0,0,1);
         glColor3f(0.1, 0.5, 0);
         glVertex3f(-0.5,0, -1);
         glVertex3f(-0.5,1, -1);
@@ -48,6 +50,7 @@ void Player::drawPlayer(){
         glVertex3f(0.5, 0, -1);
 
         //left side
+        glNormal3f(-1,0,0);
         glColor3f(1, 1, 0);
         glVertex3f(-0.5,0, -2);
         glVertex3f(-0.5,0, -1);
@@ -55,6 +58,7 @@ void Player::drawPlayer(){
         glVertex3f(-0.5, 1, -2);
 
         //right side
+        glNormal3f(1,0,0);
         glColor3f(0, 0, 1);
         glVertex3f(0.5,0, -1);
         glVertex3f(0.5,0, -2);
@@ -62,6 +66,7 @@ void Player::drawPlayer(){
         glVertex3f(0.5, 1, -1);
 
         //bottom side
+        glNormal3f(0,-1,0);
         glColor3f(1, 1, 0);
         glVertex3f(-0.5,0, -1);
         glVertex3f(-0.5,0, -2);
@@ -69,6 +74,7 @@ void Player::drawPlayer(){
         glVertex3f(0.5, 0, -1);
 
         //top side
+        glNormal3f(0,1,0);
         glColor3f(0.5, 0, 0.3);
         glVertex3f(-0.5,1, -1);
         glVertex3f(0.5,1, -1);

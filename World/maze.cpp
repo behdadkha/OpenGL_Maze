@@ -46,6 +46,7 @@ GLfloat vertices[20][3] = {
 	{0.5,1,-1},
 	{0,1,-1}
 };
+
 int distance = 3;
 float xmultiplier = -9;
 float zmultiplier = -15;
@@ -172,17 +173,7 @@ float scale[walls][3] = {
 
 };
 
-void Maze::makeWall(){
-	glBegin(GL_QUADS);
-	glColor3f(0,0.5,0.5);
-	for (int i = 0; i < 20; i++){
-		glVertex3fv(vertices[i]);
-	}
-	glEnd();
-}
-
 Maze::Maze(){
-
 	for(int i = 0; i < numWalls; i++){
 		vector<float> vecs;
 		vecs.push_back(translate[i][0]);
@@ -201,6 +192,59 @@ Maze::Maze(){
 	
 
 }
+//for texture
+int cords[20][2] = {
+	{0,0},
+	{0,1},
+	{1,1},
+	{1,0},
+
+	{0,0},
+	{1,0},
+	{1,1},
+	{0,1},
+
+	{0,0},
+	{1,0},
+	{1,1},
+	{0,1},
+
+	{0,0},
+	{1,0},
+	{1,1},
+	{0,1},
+
+	{0,0},
+	{1,0},
+	{1,1},
+	{0,1},
+};
+
+int normals[5][3] = {
+	//left
+	{-1,0,0},
+	//right
+	{1,0,0},
+	//front
+	{0,0,1},
+	//back
+	{0,0,-1},
+	//top
+	{0,1,0}
+};
+void Maze::makeWall(){
+	glBegin(GL_QUADS);
+	glColor3f(0,0.5,0.5);
+	for (int i = 0; i < 20; i++){
+		if(i % 4 == 0){
+			glNormal3f(normals[i/4][0], normals[i/4][1], normals[i/4][2]);
+		}
+		glTexCoord2f(cords[i][0], cords[i][1]);
+		glVertex3fv(vertices[i]);
+	}
+	glEnd();
+}
+
 void Maze::drawMaze(){
 
 	for(int i = 0; i < numWalls; i++){

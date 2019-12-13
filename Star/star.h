@@ -1,4 +1,3 @@
-#include "../Material/materials.h"
 #include <vector>
 #ifndef STAR_H
 #define STAR_H

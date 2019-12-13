@@ -66,27 +66,50 @@ World::World(){
 		Obstacle o;
 		this -> darts.push_back(o);
 	}
-	//pointer to maze
-	Maze m;
-	this -> maze = &m;
 
-	//get the wall positions from maze
-	//(using the maze's wallPositions led to errors)
-	for(int i = 0; i < m.wallPositions.size(); i++){
-		this -> wallPositions.push_back(m.wallPositions[i]);
-	}
-
-	for(int i = 0; i < m.wallScale.size(); i++){
-		this -> wallScale.push_back(m.wallScale[i]);
-	}
 
 }
+void World::newWorld(){
+	stars.clear();
+	darts.clear();
+	randomGen.clear();
+	time = 500;
+
+	numStars = 5;
+
+	numEnemies = 5;
+	numDarts = 10;
+
+	//generate stars
+	for(int i = 0; i < numStars; i++){
+		int random = getRandom();
+		Star s(random);
+		stars.push_back(s);
+	}
+
+	//generate darts
+	for(int i = 0; i < numDarts; i++){
+		Obstacle o;
+		darts.push_back(o);
+	}
+}
+int val = 5;
 void World::drawFloor(){
 	glBegin(GL_QUADS);
-        glColor3f(1, 0, 0);
+        
+		glNormal3f(0,1,0);
+		glColor3f(1, 1, 1);
+        glTexCoord2f(val, 0);
         glVertex3f(-16,-0.1,16);
+
+        glTexCoord2f(0,0);
         glVertex3f(16,-0.1,16);
+        
+        glTexCoord2f(0,val);
         glVertex3f(16,-0.1,-64);
+        
+        glTexCoord2f(val,val);
         glVertex3f(-16,-0.1,-64);
+		
     glEnd();
 }
