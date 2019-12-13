@@ -2,6 +2,8 @@
 
 Running the makefile will execute the game.
 
+<img src="https://raw.githubusercontent.com/behdadkha/OpenGL_Maze/master/capture.gif" width="30%">
+
 **Features**\
 Lighting\
 Texture\
